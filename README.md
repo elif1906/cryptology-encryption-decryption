@@ -1,2 +1,2 @@
 # crypto-web
-A standalone web application that can perform Encryption and Decryption using option of (Caeser Cipher, DES/Triple DES and Playfair Cipher) Algorithm
+A standalone web application that can perform Encryption and Decryption using option of (Caeser Cipher,RSA cipher and AES Cipher) Algorithm
