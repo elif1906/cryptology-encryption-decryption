@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    />
+    <title>Cryptogenius.com</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "ıntro-rust";
+        font-size: 20px;
+        background: #f0f5f5;
+        margin: 0;
+      }
+
+      header {
+        position: relative;
+        color: white;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      header video {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+
+      nav {
+        background: white;
+        color: #3498db;
+        padding: 10px;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      nav a {
+        color: #3498db;
+        text-decoration: none;
+        padding: 10px;
+        margin: 0 10px;
+        font-weight: bold;
+        position: relative;
+        display: inline-block;
+        transition: all 0.3s ease;
+      }
+
+      nav a::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: #3498db;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.3s ease;
+      }
+
+      nav a:hover::before {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+
+      nav a:hover {
+        color: #2980b9;
+        transform: translateY(-2px);
+      }
+
+      section {
+        background: #ffffff;
+        margin: 20px 0;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      section:hover {
+        transform: scale(1.02);
+      }
+
+      h2 {
+        color: #3498db;
+        margin-bottom: 14px;
+        font-size: 1.8em;
+      }
+
+      p {
+        color: #555;
+        line-height: 1.6;
+        margin-bottom: 20px;
+        font-size: 1em;
+      }
+
+      ul {
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 20px;
+      }
+
+      ul li {
+        margin-bottom: 10px;
+        position: relative;
+        padding-left: 20px;
+      }
+
+      ul li::before {
+        content: "\2022";
+        color: #3498db;
+        font-size: 1.5em;
+        position: absolute;
+        left: 0;
+        top: 2px;
+      }
+
+      img {
+        display: block;
+        margin: 20px auto;
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, filter 0.3s ease;
+      }
+
+      img:hover {
+        transform: scale(1.05);
+        filter: brightness(1.2);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <video autoplay loop muted>
+        <source src="logo.mp4" type="video/mp4" />
+      </video>
+    </header>
+
+    <nav>
+      <a href="Home.html">Home</a>
+      <a href="caeser-cipher.html">Caesar Cipher</a>
+      <a href="RSA.html">RSA-cipher</a>
+      <a href="aes.html">AES-Cipher</a>
+      <a href="referans.html">References</a>
+    </nav>
+
+    <section id="cryptology-history">
+      <h2>Cryptology Historically</h2>
+      <p>
+        Cryptology is a discipline with a history dating back to ancient times,
+        encompassing a range of uses rooted in the need for secret communication
+        and encryption. The encryption methods employed by the Egyptians around
+        1900 BCE represent some of the earliest applications in history and have
+        diversified over time. During the Middle Ages, ciphers, particularly
+        used in diplomatic communication, facilitated the transmission of
+        confidential information among royal families and states. One of the
+        most famous instances of codebreaking occurred during World War II when
+        the German Enigma machine was deciphered, underscoring the significance
+        of cryptography throughout history. In the modern era, with the
+        advancement of computers and the widespread adoption of digital
+        communication, cryptography has become more intricate, forming the
+        foundation for secure communication systems.
+      </p>
+      <img
+        src="https://isternet.com/cdn/images/2022/05/07/15/e3bee96a552efdcf45281980cff26a69.jpg"
+        alt=" Image"
+      />
+    </section>
+
+    <section id="cipher-types">
+      <h2>Cipher Types</h2>
+      <p>
+        Ciphers represent encryption algorithms used for securely transmitting
+        confidential information. In this field, various types of ciphers exist,
+        including:
+      </p>
+      <ul>
+        <li>
+          <strong>Symmetric Encryption:</strong> The same key is used for both
+          encryption and decryption processes. For example, DES (Data Encryption
+          Standard) and AES (Advanced Encryption Standard) are examples of
+          symmetric encryption.
+        </li>
+        <li>
+          <strong>Public Key Encryption:</strong> Every user has a public key
+          and a private key. Public keys are used for encrypting information,
+          while private keys are used for decryption. RSA
+          (Rivest–Shamir–Adleman) is an example of this type of encryption.
+        </li>
+        <li>
+          <strong>Asymmetric Encryption:</strong> İki farklı anahtarın
+          kullanıldığı bir şifreleme yöntemidir. Bu anahtarlar birbirine
+          matematiksel olarak bağlıdır, ancak bir tanesi diğerini tespit etmek
+          için kullanılamaz. Bu, güvenli bir iletişim sağlamak için kullanılır.
+          Asimetrik şifreleme örnekleri arasında RSA ve ECC (Elliptic Curve
+          Cryptography) bulunur.
+        </li>
+        <li>
+          <strong>Block Encryption and Flow Encryption:</strong> Block cipher
+          encrypts data by dividing it into specific-sized blocks, encrypting
+          each block separately. Stream cipher, on the other hand, encrypts data
+          bit by bit. Both types ensure secure communication using different
+          algorithms and methods.
+        </li>
+      </ul>
+      <p>
+        Cipher types continue to evolve continuously for the purpose of secure
+        communication and data protection. These encryption methods undergo
+        constant evolution in conjunction with technological advancements in the
+        field of information security.
+      </p>
+    </section>
+
+    <section id="caeser-cipher">
+      <h2>Caesar Cipher</h2>
+      <p>
+        The Caesar Cipher is a simple encryption technique that encrypts each
+        letter by shifting it a certain number of positions. Both encryption and
+        decryption processes involve shifting each letter by a specific "key"
+        number. For example, applying a 3-letter shift (key = 3) to the text:
+        "HELLO" would be encrypted as "KHOOR". Decrypting "KHOOR" with the same
+        key would revert it back to "HELLO". Despite being a basic encryption
+        method, the Caesar Cipher is one of the historically used techniques and
+        represents one of the earliest encryption methods.
+      </p>
+      <img
+        src="data:image/png;base64,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"
+        alt="Caesar Cipher Image"
+      />
+    </section>
+
+    <section id="rsa">
+      <h2>RSA-cipher</h2>
+      <p>
+        RSA is a public-key signature algorithm developed by Ron Rivest, Adi
+        Shamir, and Leonard Adleman. The algorithm's initial paper was published
+        in 1977, and it employs logarithmic functions to both complicate the
+        process and provide resistance against brute-force attacks. It is
+        optimized to work efficiently in the post-distribution phase. The image
+        below demonstrates the verification of digital signatures using the RSA
+        methodology. Additionally, RSA can be utilized for encrypting and
+        decrypting general information, enabling secure data exchange and
+        managing digital signature verification.
+      </p>
+      <img
+        src="https://www.simplilearn.com/ice9/free_resources_article_thumb/rsa-RSA_Algorithm.PNG"
+        alt="RSA Image"
+      />
+    </section>
+
+    <section id="aes">
+      <h2>AES-Cipher</h2>
+      <p>
+        Established by the U.S. National Institute of Standards and Technology
+        (NIST) in 2001, Advanced Encryption Standard (AES) is a widely used
+        encryption specification known for its superior strength compared to DES
+        and triple DES, despite being more complex to implement. AES functions
+        as a block cipher with key sizes available in 128, 192, and 256 bits,
+        encrypting data in 128-bit blocks. The encryption process takes a
+        128-bit input, and through a substitution-permutation network principle,
+        it produces a 128-bit encrypted cipher text output. Notably, AES
+        operates on bytes of data, processing 128 bits (or 16 bytes) of input
+        data at a time due to its 128-bit block size.
+      </p>
+      <img
+        src="https://media.geeksforgeeks.org/wp-content/uploads/20210729145308/aes.png"
+        alt="AES Image"
+      />
+    </section>
+  </body>
+</html>

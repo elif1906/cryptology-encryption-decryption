@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cryptogenius.com</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "ıntro-rust";
+        font-size: 20px;
+        background: #f0f5f5;
+        margin: 0;
+      }
+
+      header {
+        position: relative;
+        color: white;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      header video {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+
+      nav {
+        background: white;
+        color: #3498db;
+        padding: 10px;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      nav a {
+        color: #3498db;
+        text-decoration: none;
+        padding: 10px;
+        margin: 0 10px;
+        font-weight: bold;
+        position: relative;
+        display: inline-block;
+        transition: all 0.3s ease;
+      }
+
+      nav a::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: #3498db;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.3s ease;
+      }
+
+      nav a:hover::before {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+
+      nav a:hover {
+        color: #2980b9;
+        transform: translateY(-2px);
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 20px auto;
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+      }
+
+      textarea,
+      input {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+
+      .buttons {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      input[type="button"] {
+        background-color: #3498db;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      input[type="button"]:hover {
+        background-color: #ff8989;
+      }
+      .buttons {
+        display: flex;
+        gap: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <video autoplay loop muted>
+        <source src="ceaser.mp4" type="video/mp4" />
+      </video>
+    </header>
+
+    <nav>
+      <a href="Home.html">Home</a>
+      <a href="caeser-cipher.html">Caesar Cipher</a>
+      <a href="RSA.html">RSA-cipher</a>
+      <a href="aes.html">AES-Cipher</a>
+      <a href="referans.html">References</a>
+    </nav>
+
+    <div class="container">
+      <label for="text">Text:</label>
+      <textarea
+        id="text"
+        cols="50"
+        rows="10"
+        onchange="c()"
+        placeholder="Type your secret or Drag/Drop a file here..."
+        style="height: 200px"
+      ></textarea>
+
+      <label for="shift">Shift:</label>
+      <input
+        type="text"
+        id="shift"
+        value=""
+        placeholder="Your Shift number.."
+      />
+
+      <div class="buttons">
+        <input type="button" value="Encrypt" onclick="doCrypt(false);" />
+        <input type="button" value="Decrypt" onclick="doCrypt(true);" />
+      </div>
+    </div>
+
+    <script>
+      function doCrypt(isDecrypt) {
+        var shiftText = document.getElementById("shift").value;
+        if (!/^-?\d+$/.test(shiftText)) {
+          alert("Shift is not an integer");
+          return;
+        }
+        var shift = parseInt(shiftText, 10);
+        if (shift < 0 || shift >= 26) {
+          alert("Shift is out of range");
+          return;
+        }
+        if (isDecrypt) shift = (26 - shift) % 26;
+        var textElem = document.getElementById("text");
+        textElem.value = caesarShift(textElem.value, shift);
+      }
+
+      function caesarShift(text, shift) {
+        var result = "";
+        for (var i = 0; i < text.length; i++) {
+          var c = text.charCodeAt(i);
+          if (65 <= c && c <= 90)
+            result += String.fromCharCode(((c - 65 + shift) % 26) + 65);
+          else if (97 <= c && c <= 122)
+            result += String.fromCharCode(((c - 97 + shift) % 26) + 97);
+          else result += text.charAt(i);
+        }
+        return result;
+      }
+    </script>
+  </body>
+</html>

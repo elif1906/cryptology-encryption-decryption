@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    />
+    <title>Cryptogenius.com</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "ıntro-rust";
+        font-size: 20px;
+        background: #f0f5f5;
+        margin: 0;
+      }
+
+      header {
+        position: relative;
+        color: white;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      header video {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+
+      nav {
+        background: white;
+        color: #3498db;
+        padding: 10px;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      nav a {
+        color: #3498db;
+        text-decoration: none;
+        padding: 10px;
+        margin: 0 10px;
+        font-weight: bold;
+        position: relative;
+        display: inline-block;
+        transition: all 0.3s ease;
+      }
+
+      nav a::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: #3498db;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.3s ease;
+      }
+
+      nav a:hover::before {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+
+      nav a:hover {
+        color: #2980b9;
+        transform: translateY(-2px);
+      }
+
+      section {
+        background: #ffffff;
+        margin: 20px 0;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      section:hover {
+        transform: scale(1.02);
+      }
+
+      h2 {
+        color: #3498db;
+        margin-bottom: 14px;
+        font-size: 1.8em;
+      }
+
+      p {
+        color: #555;
+        line-height: 1.6;
+        margin-bottom: 20px;
+        font-size: 1em;
+      }
+
+      ul {
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 20px;
+      }
+
+      ul li {
+        margin-bottom: 10px;
+        position: relative;
+        padding-left: 20px;
+      }
+
+      ul li::before {
+        content: "\2022";
+        color: #3498db;
+        font-size: 1.5em;
+        position: absolute;
+        left: 0;
+        top: 2px;
+      }
+
+      img {
+        display: block;
+        margin: 20px auto;
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, filter 0.3s ease;
+      }
+
+      img:hover {
+        transform: scale(1.05);
+        filter: brightness(1.2);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <video autoplay loop muted>
+        <source src="refe.mp4" type="video/mp4" />
+      </video>
+    </header>
+
+    <nav>
+      <a href="Home.html">Home</a>
+      <a href="caeser-cipher.html">Caesar Cipher</a>
+      <a href="RSA.html">RSA-cipher</a>
+      <a href="aes.html">AES-Cipher</a>
+      <a href="referans.html">References</a>
+    </nav>
+
+    <section id="cryptology-history">
+      <h2>References</h2>
+      <p>
+        While working on this project, I utilized the following resources. In addition to these, I also benefited from well-known software platforms, such as GeeksforGeeks,chatgpt,stackoverflow for example.
+        <ul>
+            <li>Cryptography and Network Security: Principles and Practice - William Stallings (2017)</li>
+            <li>Cryptography Engineering: Design Principles and Practical Applications - Niels Ferguson, Bruce Schneier, Tadayoshi Kohno (2010)</li>
+            <li>Understanding Cryptography: A Textbook for Students and Practitioners - Christof Paar, Jan Pelzl (2010)</li>
+            <li><a href="https://www.openssl.org" target="_blank">https://www.openssl.org</a></li>
+        </ul>
+        <img src="res.png" alt="Image">
+    </p>
+      
+    </section>
