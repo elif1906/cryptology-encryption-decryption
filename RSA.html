@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 <head>
    <meta charset="utf-8">
@@ -7,6 +7,8 @@
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"  integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
     <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    
     <title>Cryptogenius.com</title>
    <style>
     * {
@@ -88,11 +90,48 @@
             background-color: #0354cb;
         }
 
-      
+     
 
   </style>
   <script>
    $(document).ready(function () {
+
+       $("#modulo").hover(() => {
+            console.log("in");
+            $("#modulo-hint").css("visibility", "visible");
+       }, () => {
+            console.log("out");
+            $("#modulo-hint").css("visibility", "hidden");
+       })
+       $("#find-coprime").hover(() => {
+            console.log("in");
+            $("#find-coprime-hint").css("visibility", "visible");
+       }, () => {
+            console.log("out");
+            $("#find-coprime-hint").css("visibility", "hidden");
+       })
+       $("#modular-multiplicative-inverse").hover(() => {
+            console.log("in");
+            $("#modular-multiplicative-inverse-hint").css("visibility", "visible");
+       }, () => {
+            console.log("out");
+            $("#modular-multiplicative-inverse-hint").css("visibility", "hidden");
+       })
+       $("#modular-exponentiation").hover(() => {
+            console.log("in");
+            $("#modular-exponentiation-hint").css("visibility", "visible");
+       }, () => {
+            console.log("out");
+            $("#modular-exponentiation-hint").css("visibility", "hidden");
+       })
+
+       $("#rsa-nav").hover(() => {
+            console.log("in");
+            $("#rsa-nav-hint").css("visibility", "visible");
+       }, () => {
+            console.log("out");
+            $("#rsa-nav-hint").css("visibility", "hidden");
+       })
        function gcd(a, b) {
            if (b == 0)
                return a;
@@ -546,9 +585,16 @@
 
 
   <div class="container-fluid p-3 px-md-4 mb-3">
-   <div style="margin-top: 50px;"></div>
+   <div style="margin-top: 10px;"></div>
    <div class="container">
-       <h4 id="modulo">Modulo</h4>
+       <h2 id="modulo">Modulo</h2>
+       <div id="modulo-hint" style="position: relative; padding: 20px 10px 20px 10px; background-color: white; width: fit-content;">
+        <p>a: Base value, usually a number representing the base for the exponentiation.
+            b: Exponent value, the power to which the base (a) is raised in the operation.
+            c: Mod value, the modulus used in modular arithmetic. The result is obtained by dividing by this modulus, and the remainder is taken</p>
+       </div>
+       
+      
        <div class="row">
            <div class="col-9">
                <div class="row">
@@ -635,7 +681,12 @@
    <hr />
    <div style="margin-top: 50px;"></div>
    <div class="container">
-       <h4 id="find-coprime">Find coprime</h4>
+       <h2 id="find-coprime">Find coprime</h2>
+       <div id="find-coprime-hint" style="position: relative; padding: 20px 10px 20px 10px; background-color: white; width: fit-content;">
+        <p>Z kümesi  n sayıların içinden seçilmiş belirli sayıları gösteren bir listedir.
+            Find Coprime butonuna tıklayarak n ile aralarında asal olan sayıları bulanır.
+            E: Açık anahtar (encryption key) olarak bilinir.  D: Özel anahtar (decryption key) olarak bilinir. </p>
+       </div>
        <div class="row">
            <div class="col-3">
                <div class="card">
@@ -715,7 +766,11 @@
    <hr />
    <div style="padding-top: 50px;"></div>
    <div class="container">
-       <h4 id="modular-multiplicative-inverse">Modular Multiplicative Inverse</h4>
+       <h2 id="modular-multiplicative-inverse">Modular Multiplicative Inverse</h2>
+       <div id="modular-multiplicative-inverse-hint" style="position: relative; padding: 20px 10px 20px 10px; background-color: white; width: fit-content;">
+        <p>The value of p must be a prime number. The value of E should be coprime with the elements in the set Z. 
+            By clicking the yellow button, an E value coprime with p will be automatically found. The value of D is the inverse of E.</p>
+       </div>
        <small id="helpId" class="form-text text-muted">Click to select Z<sub>p</sub></small>
        <div class="row">
            <div class="col-2">
@@ -886,7 +941,11 @@
        </div>
        <div style="margin-top: 20px;"></div>
        <div class="container">
-           <h4 id="modular-exponentiation">Modular Exponentiation in Z<sub>p</sub></h4>
+           <h2 id="modular-exponentiation">Modular Exponentiation in Z<sub>p</sub></h2>
+           <div id="modular-exponentiation-hint" style="position: relative; padding: 20px 10px 20px 10px; background-color: white; width: fit-content;">
+            <p>p is a prime number. It is calculated with Q (Euler Totient Function). Q and E are prime between them. 
+            E is public key, D is private key. D is found with brute-force inverse and fast inverse.</p>
+           </div>
            <div class="row">
                <div class="col">
                    <div class="card">
@@ -1032,7 +1091,10 @@
        <div style="margin-top: 50px;"></div>
 
        <div class="container">
-           <h4 id="rsa-nav">RSA</h4>
+           <h2 id="rsa-nav">RSA</h2>
+           <div id="rsa-nav-hint" style="position: relative; padding: 20px 10px 20px 10px; background-color: white; width: fit-content;">
+            <p>RSA algorithm is calculated.</p>
+           </div>
            <div class="row">
                <div class="col-4">
                    <div class="card">
