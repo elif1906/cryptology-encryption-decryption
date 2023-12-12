@@ -94,11 +94,12 @@
 
   </style>
   <script>
+
    $(document).ready(function () {
 
        $("#modulo").hover(() => {
             console.log("in");
-            $("#modulo-hint").css("display", "flex");
+            $("#modulo-hint").css("display", "none");
        }, () => {
             console.log("out");
             $("#modulo-hint").css("display", "none");
