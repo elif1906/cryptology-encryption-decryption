@@ -5,8 +5,7 @@
 https://cryptologygenius.netlify.app/home
 
 
-![web](ceaser.png)     ![web](aes.png)   ![web](rsa.png)
-
+![web](ceaser.png) ![web](aes.png) ![web](rsa.png)
 ## Overview
 This project is a standalone web application that performs encryption and decryption using Caesar Cipher, RSA Cipher, and AES Cipher algorithms. It provides a user-friendly interface for learning and experimenting with these cryptographic techniques.
 
